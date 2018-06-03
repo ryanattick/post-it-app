@@ -1,18 +1,17 @@
 .cardContainer {
-  border: 1px solid #DCDDDE;
-  height: 30%;
+  height: 40%;
   width: 20%;
   margin: 1em;
   border-radius: 10px;
-  box-shadow: 10px -8px 23px -8px rgba(0,0,0,0.14);
+  box-shadow: 0 0 3px #ccc;
+
 
 }
 
 .colorBar {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
-  background-color: orange;
-  height: 10%;
+  height: 7%;
   width: 100%;
 }
 
@@ -34,7 +33,7 @@
 }
 
 .text {
-  /*border: 2px solid red;*/
+  white-space: pre-wrap;
   margin: .5em;
   font-family: sans-serif;
   color: #4E6676;

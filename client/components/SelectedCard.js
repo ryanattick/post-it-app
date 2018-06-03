@@ -108,7 +108,7 @@ class SelectedCard extends Component {
               <input type="text" value={this.state.title} onChange={this.handleTitleChange} className={style.cardTitleInput} onClick={this.clearTitleInput}/>
             </label>
             <label>
-              <input type="text" value={this.state.text} onChange={this.handleTextChange} className={style.cardTextInput} onClick={this.clearTextInput}/>
+              <textarea type="text" value={this.state.text} onChange={this.handleTextChange} className={style.cardTextInput} onClick={this.clearTextInput}/>
             </label>
           </form>
           <div className={style.buttonsContainer}>

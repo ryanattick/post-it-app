@@ -87,8 +87,9 @@ class App extends Component {
         <div className={style.appContainer}>
           <Header addCard={this.addCard}/>
           {this.state.cards.length < 1 &&
-            <div>
+            <div className={style.addNote}>
               Please add a new note to get started!
+              <ion-icon name="arrow-round-up"></ion-icon>
             </div>
           }
           <CardContainer

@@ -2,7 +2,7 @@
   background-color: #fefefe;
   margin: 10% auto;
   border: 1px solid #888;
-  width: 50%;
+  width: 40%;
   height: 80%;
   display: flex;
   flex-direction: column;
@@ -52,6 +52,16 @@
 }
 
 
+textarea {
+  width: 98%;
+  border: none;
+  font-family: sans-serif;
+  height: auto;
+  font-size: 2.5em;
+  margin-left: 2%;
+  color: #DBDBDB;
+}
+
 
 input {
   width: 98%;
@@ -64,6 +74,10 @@ input {
 }
 
 input:focus {
+  outline: none;
+}
+
+textarea:focus {
   outline: none;
 }
 

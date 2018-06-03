@@ -5,12 +5,14 @@ const DeleteMessage = (props) => {
 
   return (
     <div className={style.deleteContainer}>
-      <span>
+      <span className={style.largeText}>
         Delete Note
       </span>
-      Are you sure you want to delete this note?
+      <span className={style.smallText}>
+        Are you sure you want to delete this note?
+      </span>
       <div className={style.buttonsContainer}>
-        <div className={style.button} onClick={props.closeDeleteCardWarning}>
+        <div className={style.button} onClick={props.closeDeleteCardWarning} style={{backgroundColor: '#D2D3D4'}}>
           Cancel
         </div>
         <div className={style.button} onClick={() => props.deleteCard()}>
