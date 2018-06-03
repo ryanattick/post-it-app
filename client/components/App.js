@@ -10,14 +10,16 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cards: [{id: 1, title: 'first', text: 'Random stuff that is on the paage.'},
-        {id: 2, title: 'second', text: 'More text goes here'},
-        {id: 3, title: 'third', text: 'to doooo'}],
+      cards: [{id: 1, title: 'first', text: 'Random stuff that is on the paage.', color: '#B6ECD1'},
+        {id: 2, title: 'second', text: 'More text goes here', color: '#B6ECD1'},
+        {id: 3, title: 'third', text: 'to doooo', color: '#B6ECD1'}],
       cardSelected: false,
       selectedCard: [],
-      deleteMessage: false
+      deleteMessage: false,
+      indexToDelete: 0
     };
     this.addCard = this.addCard.bind(this);
+    this.createNewCard = this.createNewCard.bind(this);
     this.deleteCard = this.deleteCard.bind(this);
     this.openSelectedCard = this.openSelectedCard.bind(this);
     this.closeSelectedCard = this.closeSelectedCard.bind(this);
@@ -40,12 +42,21 @@ class App extends Component {
   }
 
   addCard() {
-    let newId = this.state.cards.length + 2;
-    this.openSelectedCard({id: newId, title: 'Untitled', text: 'Just start typing here.'});
+    //find out what happens when you click 'apply' see if you can push into cards arr then
+    // let newId = this.state.cards.length + 1;
+    this.openSelectedCard({title: 'Untitled', text: 'Just start typing here.'});
     // this.state.cards.push('New Post It');
     // this.setState({
     //   cards: this.state.cards
-    // })
+    // }, () => )
+  }
+
+  createNewCard(cardInfo) {
+    let newId = this.state.cards.length + 1;
+    this.state.cards.push({id: newId, title: cardInfo.title, text: cardInfo.text, color: cardInfo.color});
+    this.setState({
+      cards: this.state.cards
+    })
   }
 
   editExistingCard(cardToEdit) {
@@ -60,11 +71,11 @@ class App extends Component {
     }, () => {this.closeSelectedCard()})
   }
 
-  openDeleteCardWarning() {
-    console.log('CLICKED')
+  openDeleteCardWarning(index) {
     this.setState({
-      deleteMessage: true
-    }, () => console.log(this.state))
+      deleteMessage: true,
+      indexToDelete: index
+    })
   }
 
   closeDeleteCardWarning() {
@@ -73,15 +84,11 @@ class App extends Component {
     })
   }
 
-  deleteCard(index) {
-
-
-    // THIS WORKS!!
-    // console.log(this.state.cards[index])
-    // this.state.cards.splice(index, 1);
-    // this.setState({
-    //   cards: this.state.cards
-    // })
+  deleteCard() {
+    this.state.cards.splice(this.state.indexToDelete, 1);
+    this.setState({
+      cards: this.state.cards
+    }, () => this.closeDeleteCardWarning())
   }
 
   render() {
@@ -92,10 +99,13 @@ class App extends Component {
             openSelectedCard={this.openSelectedCard}
             closeSelectedCard={this.closeSelectedCard}
             cards={this.state.cards}
+            createNewCard={this.createNewCard}
             deleteCard={this.deleteCard}
             selectedCard={this.state.selectedCard}
             cardSelected={this.state.cardSelected}
-            editExistingCard={this.editExistingCard} openDeleteCardWarning={this.openDeleteCardWarning} closeDeleteCardWarning={this.closeDeleteCardWarning}/>
+            editExistingCard={this.editExistingCard} openDeleteCardWarning={this.openDeleteCardWarning} closeDeleteCardWarning={this.closeDeleteCardWarning}
+            deleteMessage={this.state.deleteMessage}
+          />
         </div>
     );
   }

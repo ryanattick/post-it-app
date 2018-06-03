@@ -65,7 +65,10 @@ class SelectedCard extends Component {
 
   getEditChangesOnClick() {
     let p = new Promise((resolve, reject) => {
-      this.props.editExistingCard({id: this.state.id, title: this.state.title, text: this.state.text})
+      if (!this.state.id) {
+        this.props.createNewCard({title: this.state.title, text: this.state.text, color: this.state.color});
+      }
+      this.props.editExistingCard({id: this.state.id, title: this.state.title, text: this.state.text, color: this.state.color})
       resolve()
     }
     )

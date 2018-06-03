@@ -2,6 +2,7 @@ import React from 'react';
 import style from '../style/DeleteMessage.css';
 
 const DeleteMessage = (props) => {
+
   return (
     <div className={style.deleteContainer}>
       <span>
@@ -12,7 +13,7 @@ const DeleteMessage = (props) => {
         <div className={style.button} onClick={props.closeDeleteCardWarning}>
           Cancel
         </div>
-        <div className={style.button}>
+        <div className={style.button} onClick={() => props.deleteCard()}>
           Delete
         </div>
       </div>

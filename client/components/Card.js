@@ -8,36 +8,42 @@ class Card extends Component {
     super(props);
     this.state = {
       title: '',
-      text: ''
+      text: '',
+      index: 0,
+      color: ''
     };
-    this.editCard = this.editCard.bind(this);
   }
 
   componentWillMount() {
     this.setState({
       title: this.props.title,
-      text: this.props.text
+      text: this.props.text,
+      index: this.props.index,
+      color: this.props.color
     })
   }
 
-  editCard() {
-    console.log('EDIT')
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      title: nextProps.title,
+      text: nextProps.text,
+      index: nextProps.index,
+      color: nextProps.color
+    });
   }
 
-  // WAS USING THIS ON CLICK TO DELETE BY INDEX
-  // () => this.props.deleteCard(this.props.index)
 
   render() {
     return (
         <div className={style.cardContainer}>
-          <div className={style.colorBar}></div>
+          <div className={style.colorBar} style={{backgroundColor: this.state.color}}></div>
           <div className={style.titleBar}>
             <div className={style.titleText}>
               {this.state.title}
             </div>
             <div className="icons">
               <ion-icon name="create" onClick={this.props.openSelectedCard}></ion-icon>
-              <ion-icon name="trash" onClick={this.props.openDeleteCardWarning}></ion-icon>
+              <ion-icon name="trash" onClick={() => this.props.openDeleteCardWarning(this.state.index)} deleteCard={this.props.deleteCard}></ion-icon>
             </div>
           </div>
 

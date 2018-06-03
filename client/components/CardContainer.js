@@ -23,10 +23,12 @@ class CardContainer extends Component {
     })
   }
 
+
+//can possibly be deleted now that it's probably not needed
   getEditChanges() {
     this.setState({
       cards: this.props.cards
-    }, () => console.log(this.state))
+    })
   }
 
 
@@ -41,6 +43,7 @@ class CardContainer extends Component {
               index={index}
               title={card.title}
               text={card.text}
+              color={card.color}
               openSelectedCard={() => this.props.openSelectedCard(card)} openDeleteCardWarning={this.props.openDeleteCardWarning}
             />
           ))}
@@ -48,6 +51,7 @@ class CardContainer extends Component {
             <div className={style.selectedCardComponentContainer}>
               <SelectedCard card={this.props.selectedCard} closeSelectedCard={this.props.closeSelectedCard} editExistingCard={this.props.editExistingCard}
               getEditChanges={this.getEditChanges}
+              createNewCard={this.props.createNewCard}
               />
             </div>
           }
