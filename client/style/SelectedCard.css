@@ -73,12 +73,10 @@ input {
   color: #DBDBDB;
 }
 
-input:focus {
-  outline: none;
-}
 
-textarea:focus {
-  outline: none;
+textarea:focus, input:focus {
+    color: black;
+    outline: none;
 }
 
 .cardTitleInput {

@@ -4,16 +4,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .addNote {
+  text-align: center;
+  width: 100%;
   font-family: sans-serif;
   margin: 10%;
   font-size: 1.5em;
+  position: relative;
 }
 
 .addNote ion-icon {
-  margin-left: 5%;
+  position: absolute;
+  top: -300%;
+  right: 9%;
   color: red;
-  font-size: 1.5rem;
+  font-size: 3rem;
 }
