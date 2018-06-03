@@ -16,6 +16,8 @@ class SelectedCard extends Component {
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
     this.getEditChangesOnClick = this.getEditChangesOnClick.bind(this);
+    this.clearTitleInput = this.clearTitleInput.bind(this);
+    this.clearTextInput = this.clearTextInput.bind(this);
   }
 
 
@@ -25,6 +27,22 @@ class SelectedCard extends Component {
       title: this.props.card.title,
       text: this.props.card.text
     })
+  }
+
+  clearTitleInput() {
+    if (this.state.title === 'Untitled') {
+      this.setState({
+        title: ''
+      })
+    }
+  }
+
+  clearTextInput() {
+    if (this.state.text === 'Just start typing here.') {
+      this.setState({
+        text: ''
+      })
+    }
   }
 
   handleTitleChange(event) {
@@ -87,19 +105,26 @@ class SelectedCard extends Component {
           </div>
           <form>
             <label>
-              <input type="text" value={this.state.title} onChange={this.handleTitleChange} className={style.cardTitleInput} placeholder={this.state.title}/>
+              <input type="text" value={this.state.title} onChange={this.handleTitleChange} className={style.cardTitleInput} onClick={this.clearTitleInput}/>
             </label>
             <label>
-              <input type="text" value={this.state.text} onChange={this.handleTextChange} className={style.cardTextInput} placeholder={this.state.text}/>
+              <input type="text" value={this.state.text} onChange={this.handleTextChange} className={style.cardTextInput} onClick={this.clearTextInput}/>
             </label>
           </form>
           <div className={style.buttonsContainer}>
-            <div className={style.button} onClick={this.props.closeSelectedCard}>
+            <div className={style.button} onClick={this.props.closeSelectedCard} style={{backgroundColor: '#D2D3D4'}}>
               Cancel
             </div>
-            <div className={style.button} onClick={this.getEditChangesOnClick}>
-              Add
-            </div>
+            {(this.state.title !== '' && this.state.text !== '') && (this.state.title !== 'Untitled') &&
+              <div className={style.button} onClick={this.getEditChangesOnClick}>
+                Add
+              </div>
+            }
+            {(this.state.title === '' || this.state.text === ''|| this.state.title === 'Untitled') &&
+              <div className={style.button} style={{backgroundColor: '#B0DFE3'}}>
+                Add
+              </div>
+            }
           </div>
         </div>
     );

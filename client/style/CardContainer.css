@@ -1,15 +1,12 @@
 .cardContainer {
   height: 100vh;
-  width: auto;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
 }
 
 .selectedCardComponentContainer {
-  /*check this code to see if anything can be deleted*/
-  display: block;
   position: fixed;
-  z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
@@ -20,9 +17,7 @@
 }
 
 .deleteMessageContainer {
-  display: block;
   position: fixed;
-  z-index: 1;
   left: 0;
   top: 0;
   width: 100%;

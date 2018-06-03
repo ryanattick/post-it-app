@@ -5,14 +5,11 @@ import CardContainer from './CardContainer';
 import style from '../style/App.css';
 
 
-
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cards: [{id: 1, title: 'first', text: 'Random stuff that is on the paage.', color: '#B6ECD1'},
-        {id: 2, title: 'second', text: 'More text goes here', color: '#B6ECD1'},
-        {id: 3, title: 'third', text: 'to doooo', color: '#B6ECD1'}],
+      cards: [],
       cardSelected: false,
       selectedCard: [],
       deleteMessage: false,
@@ -42,13 +39,7 @@ class App extends Component {
   }
 
   addCard() {
-    //find out what happens when you click 'apply' see if you can push into cards arr then
-    // let newId = this.state.cards.length + 1;
     this.openSelectedCard({title: 'Untitled', text: 'Just start typing here.'});
-    // this.state.cards.push('New Post It');
-    // this.setState({
-    //   cards: this.state.cards
-    // }, () => )
   }
 
   createNewCard(cardInfo) {
@@ -95,6 +86,11 @@ class App extends Component {
     return (
         <div className={style.appContainer}>
           <Header addCard={this.addCard}/>
+          {this.state.cards.length < 1 &&
+            <div>
+              Please add a new note to get started!
+            </div>
+          }
           <CardContainer
             openSelectedCard={this.openSelectedCard}
             closeSelectedCard={this.closeSelectedCard}

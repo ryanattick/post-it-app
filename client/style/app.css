@@ -1,4 +1,7 @@
 .appContainer {
   height: 100vh;
   width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
