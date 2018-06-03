@@ -1,0 +1,49 @@
+.cardContainer {
+  border: 1px solid #DCDDDE;
+  height: 20%;
+  width: 20%;
+  margin: 1em;
+  border-radius: 10px;
+  box-shadow: 10px -8px 23px -8px rgba(0,0,0,0.14);
+
+}
+
+.colorBar {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  background-color: orange;
+  height: 10%;
+  width: 100%;
+}
+
+.titleBar {
+  height: 20%;
+  width: 100%;
+  font-size: 1.25em;
+  border-bottom: 1px solid #DCDDDE;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titleText {
+  margin: .5em;
+  font-family: sans-serif;
+  color: #4E6676;
+}
+
+.text {
+  /*border: 2px solid red;*/
+  margin: .5em;
+  font-family: sans-serif;
+  color: #4E6676;
+}
+
+ion-icon {
+  color: #DCDDDE;
+}
+
+ion-icon:hover {
+  color: #56B6BF;
+}

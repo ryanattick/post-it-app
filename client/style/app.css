@@ -1,17 +1,4 @@
-.App {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-content: space-around;
-    align-items: flex-start;
-  }
-
-.AppBar {
-  display: inline-flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-content: space-between;
-  align-items: center;
+.appContainer {
+  height: 100vh;
+  width: auto;
 }

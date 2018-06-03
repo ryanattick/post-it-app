@@ -1,8 +1,5 @@
 # Dependency Directories
 node_modules/
 
-# Secure Passcodes
-flickr.config.js
-
 # Compiled Code
 builds/transformed.js

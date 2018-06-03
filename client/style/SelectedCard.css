@@ -1,0 +1,104 @@
+.selectedCardContainer {
+  background-color: #fefefe;
+  margin: 10% auto;
+  border: 1px solid #888;
+  width: 70%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+}
+
+.colorBar {
+  width: 100%;
+  height: 3%;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.colorChoices {
+  height: 20%;
+  width: 25%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.color {
+  height: 20%;
+  width: 13%;
+  border-radius: 5px;
+}
+
+/*.color:focus {
+  border: 1px solid black;
+}*/
+
+#pink {
+  background-color: #FAA8B0;
+}
+
+#green {
+  background-color: #B6ECD1;
+}
+
+#orange {
+  background-color: #FBDBAE;
+}
+
+#blue {
+  background-color: #AECCFB;
+}
+
+
+
+input {
+  width: 99%;
+  border: none;
+  font-family: sans-serif;
+  height: auto;
+}
+
+.cardTitleInput::placeholder {
+  font-size: 2.5em;
+  padding-left: 2%;
+}
+
+.cardTextInput::placeholder {
+  font-size: 1.75em;
+  padding-left: 2%;
+}
+
+.cardTitleInput {
+  padding: 3% 0;
+}
+
+.cardTextInput {
+  padding: 10% 0;
+}
+
+.buttonsContainer {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #FAFAFA;
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.button {
+  font-family: sans-serif;
+  color: white;
+  background-color: #56B6BF;
+  border-radius: 5px;
+  height: 50%;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+}
