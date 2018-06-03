@@ -12,7 +12,7 @@ const DeleteMessage = (props) => {
         Are you sure you want to delete this note?
       </span>
       <div className={style.buttonsContainer}>
-        <div className={style.button} onClick={props.closeDeleteCardWarning} style={{backgroundColor: '#D2D3D4'}}>
+        <div className={style.button} onClick={props.closeDeleteCardWarning} id={style.cancelButton}>
           Cancel
         </div>
         <div className={style.button} onClick={() => props.deleteCard()}>
@@ -22,6 +22,5 @@ const DeleteMessage = (props) => {
     </div>
   );
 };
-
 
 export default DeleteMessage;

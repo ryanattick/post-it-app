@@ -1,5 +1,5 @@
 # Blend Coding Challenge
-DESCRIPTION
+This project was designed as a note taking app. Users can create cards with post-it colors to keep track of lists and reminders. Cards can be added, edited, and deleted.
 
 
 ## Set Up
@@ -11,6 +11,5 @@ There are three steps for developer setup of this app:
 ## Built With
 - JavaScript
 - React.js
-
-
-ADD CONTENT THEY WANTED YOU TO TALK ABOUT IN THE INSTRUCTIONS
+- Node/Express
+- Webpack

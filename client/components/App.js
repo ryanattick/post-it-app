@@ -4,7 +4,6 @@ import AddButton from './AddButton';
 import CardContainer from './CardContainer';
 import style from '../style/App.css';
 
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -25,6 +24,7 @@ class App extends Component {
     this.closeDeleteCardWarning = this.closeDeleteCardWarning.bind(this);
   }
 
+  //Handles selected card modal
   openSelectedCard(card) {
     this.setState({
       cardSelected: true,
@@ -38,10 +38,12 @@ class App extends Component {
     })
   }
 
+  //Adds a new card to the screen, doesn't persist until user hits 'apply'
   addCard() {
     this.openSelectedCard({title: 'Untitled', text: 'Just start typing here.'});
   }
 
+  //Creates new card persistant in the browser
   createNewCard(cardInfo) {
     let newId = this.state.cards.length + 1;
     this.state.cards.push({id: newId, title: cardInfo.title, text: cardInfo.text, color: cardInfo.color});
@@ -50,6 +52,7 @@ class App extends Component {
     })
   }
 
+  //Edits a card that already exists
   editExistingCard(cardToEdit) {
     for (let i = 0; i < this.state.cards.length; i++) {
       if(this.state.cards[i].id === cardToEdit.id) {
@@ -62,6 +65,7 @@ class App extends Component {
     }, () => {this.closeSelectedCard()})
   }
 
+  //Handels delete warning modal
   openDeleteCardWarning(index) {
     this.setState({
       deleteMessage: true,
@@ -75,12 +79,14 @@ class App extends Component {
     })
   }
 
+  //Deletes card when user confirms the action in modal
   deleteCard() {
     this.state.cards.splice(this.state.indexToDelete, 1);
     this.setState({
       cards: this.state.cards
     }, () => this.closeDeleteCardWarning())
   }
+
 
   render() {
     return (
